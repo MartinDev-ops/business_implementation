@@ -1,104 +1,84 @@
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style type="text/tailwindcss">
-      :root {
-        --primary-50: #eef6ff;
-        --primary-100: #dbeaff;
-        --primary-200: #bcdfff;
-        --primary-300: #8ecbff;
-        --primary-400: #5aaeff;
-        --primary-500: #368eff;
-        --primary-600: #1172d4;
-        --primary-700: #0d5ab5;
-        --primary-800: #0a4792;
-        --primary-900: #083a75;
-        --primary-950: #052345;
-      }
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shield - Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
 </head>
-<body class="bg-gray-900 font-sans">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-[#111418] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283039] px-10 py-3">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6 text-[var(--primary-600)]">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-white text-xl font-bold tracking-[-0.015em]">Shield</h2>
-</div>
-<nav class="flex flex-1 justify-end">
-<div class="flex items-center gap-8">
-<a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="#">Browse</a>
-<a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="#">About Us</a>
-<a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="#">Contact</a>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-[#283039] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#3b4754] transition-colors">
-<span class="truncate">Log In</span>
-</button>
-</div>
-</nav>
-</header>
-<main class="flex flex-1 justify-center items-center py-16 px-4">
-<div class="flex flex-col w-full max-w-md bg-[#181C20] rounded-xl shadow-2xl p-8">
-<div class="text-center mb-8">
-<h1 class="text-white text-3xl font-bold tracking-tight">Create an Account</h1>
-<p class="text-gray-400 mt-2">Join our community of security professionals.</p>
-</div>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="first-name">First Name</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="first-name" placeholder="John" type="text"/>
-</div>
-<div>
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="last-name">Last Name</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="last-name" placeholder="Doe" type="text"/>
-</div>
-</div>
-<div>
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="email">Email Address</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="email" placeholder="you@example.com" type="email"/>
-</div>
-<div>
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="phone-number">Phone Number</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="phone-number" placeholder="+1 (555) 000-0000" type="tel"/>
-</div>
-<div x-data="{ showPassword: false }">
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="password">Password</label>
-<div class="relative">
-<input :type="showPassword ? 'text' : 'password'" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="password" placeholder="Enter your password"/>
-<button @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-white" type="button">
-<span class="material-symbols-outlined" x-text="showPassword ? 'visibility_off' : 'visibility'"></span>
-</button>
-</div>
-</div>
-<div x-data="{ showConfirmPassword: false }">
-<label class="text-white text-sm font-medium leading-normal pb-2 block" for="confirm-password">Confirm Password</label>
-<div class="relative">
-<input :type="showConfirmPassword ? 'text' : 'password'" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-white focus:outline-0 focus:ring-2 focus:ring-[var(--primary-600)] border border-[#3b4754] bg-[#1c2127] h-12 placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-shadow" id="confirm-password" placeholder="Confirm your password"/>
-<button @click="showConfirmPassword = !showConfirmPassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-white" type="button">
-<span class="material-symbols-outlined" x-text="showConfirmPassword ? 'visibility_off' : 'visibility'"></span>
-</button>
-</div>
-</div>
-<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-4 bg-[var(--primary-600)] text-white text-base font-bold leading-normal tracking-wide hover:bg-[var(--primary-700)] transition-colors transform hover:scale-105" type="submit">
-<span class="truncate">Sign Up</span>
-</button>
-</form>
-<p class="text-gray-400 text-sm font-normal text-center mt-6">
-              Already have an account?
-              <a class="font-medium text-[var(--primary-500)] hover:text-[var(--primary-400)] hover:underline" href="#">Log In</a>
-</p>
-</div>
-</main>
-</div>
-</div>
-<script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</body></html>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🟦 Shield</div>
+    <nav>
+      
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <button class="login-btn">Log In</button>
+    </nav>
+  </header>
+
+  <!-- Signup Form -->
+  <main class="container">
+    <div class="form-card">
+      <h2>Create an Account</h2>
+      <p class="subtitle">Join our community of security professionals.</p>
+
+      <form>
+        <div class="row">
+          <div class="field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" >
+          </div>
+          <div class="field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+27 23 456 7890">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input type="password" id="password" placeholder="Enter your password">
+            <span class="toggle">&#128065;</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm Password</label>
+          <div class="password-field">
+            <input type="password" id="confirm" placeholder="Confirm your password">
+            <span class="toggle">&#128065;</span>
+          </div>
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+
+      <p class="footer-text">
+        Already have an account? <a href="#">Log In</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    // Toggle password visibility
+    document.querySelectorAll('.password-field .toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const input = toggle.previousElementSibling;
+        input.type = input.type === 'password' ? 'text' : 'password';
+      });
+    });
+  </script>
+</body>
+</html>
