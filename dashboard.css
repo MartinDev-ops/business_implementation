@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  background-color: #111827;
+  color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1f2937;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile {
+  text-align: center;
+}
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #374151;
+  margin-bottom: 10px;
+}
+
+.profile h3 {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+.profile p {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.menu a {
+  padding: 12px 15px;
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.menu a.active,
+.menu a:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.logout {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  padding: 10px 0;
+}
+
+/* Dashboard Content */
+.dashboard {
+  flex: 1;
+  padding: 30px;
+}
+
+.dashboard h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Upcoming Booking */
+.upcoming .booking-card {
+  display: flex;
+  background: #1f2937;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.booking-image {
+  width: 40%;
+  background: #374151;
+}
+.booking-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-details {
+  padding: 20px;
+  flex: 1;
+}
+.booking-details h3 {
+  margin: 10px 0;
+}
+.btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #1d4ed8;
+}
+.btn.secondary {
+  background: #374151;
+}
+.btn.secondary:hover {
+  background: #4b5563;
+}
+
+/* Booking History */
+.history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+.history th,
+.history td {
+  padding: 12px 15px;
+  text-align: left;
+}
+.history th {
+  background: #111827;
+  color: #9ca3af;
+}
+.history tr:nth-child(even) {
+  background: #1f2937;
+}
+.status {
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Quick Actions */
+.actions .action-buttons {
+  display: flex;
+  gap: 20px;
+}
+/* Extra style for empty states */
+.booking-card.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f2937;
+  border-radius: 10px;
+  padding: 30px;
+  color: #9ca3af;
+  font-style: italic;
+}

@@ -1,202 +1,191 @@
+
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f1115;
-  color: #fff;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-}
-
-/* Navbar */
-.navbar {
-  width: 100%;
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: #033392;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #ccc;
-  font-size: 14px;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #fff;
-}
-
-.login-btn {
-  background: #0070f3 ;
-  color: #fff;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.login-btn:hover {
-  background: #2a2d35;
+  background: white;
+  overflow: hidden;
 }
 
 /* Container */
 .container {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  height: 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Left Section */
+.left {
   flex: 1;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: #fff;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.left h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite step-end alternate;
+}
+
+.left p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 2s ease 3s forwards;
+}
+
+/* Curve Divider */
+.curve {
+  width: 80px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.curve svg {
+  width: 100%;
+  height: 100%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Right Section */
+.right {
+  flex: 1.3;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* offset for navbar */
+  background: #f4f4f4;
+  position: relative;
 }
 
-/* Form Card */
-.form-card {
-  background: #181a20;
-  padding: 30px;
+.form-box {
+  background: #fff;
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   width: 100%;
-  max-width: 500px;
-  text-align: center;
+  max-width: 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: slideUp 1s ease-out 0.5s forwards;
+  opacity: 0;
 }
 
-.form-card h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.form-card .subtitle {
-  color: #aaa;
-  font-size: 14px;
+.form-box h2 {
   margin-bottom: 20px;
   text-align: center;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-/* Inputs */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.row {
-  display: flex;
-  gap: 10px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-label {
-  font-size: 13px;
-  color: #ccc;
-  margin-bottom: 6px;
-  text-align: left;
-}
-
 input {
-  flex: 1;
-  background: #0f1115;
-  border: 1px solid #2a2d35;
-  padding: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
-  color: #fff;
-}
-
-input::placeholder {
-  color: #666;
+  transition: all 0.3s;
 }
 
 input:focus {
-  outline: none;
   border-color: #0070f3;
+  box-shadow: 0 0 6px rgba(0, 112, 243, 0.3);
+  outline: none;
 }
 
-/* Password Fields */
-.password-field {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.password-field input {
-  width: 100%;
-  padding-right: 35px; /* space for eye icon */
-}
-
-.password-field .toggle {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  color: #888;
-  font-size: 16px;
-  user-select: none;
-}
-
-.password-field .toggle:hover {
-  color: #fff;
-}
-
-/* Button */
-.signup-btn {
-  background: #0070f3;
+button {
+  padding: 12px;
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
   color: #fff;
   border: none;
-  padding: 12px;
   border-radius: 6px;
   font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
-.signup-btn:hover {
-  background: #005ad1;
+button:hover {
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  transform: translateY(-3px);
 }
 
-/* Footer text */
-.footer-text {
+.signin-text {
   margin-top: 15px;
-  font-size: 13px;
-  color: #aaa;
+  font-size: 14px;
+  text-align: center;
 }
 
-.footer-text a {
+.signin-text a {
   color: #0070f3;
   text-decoration: none;
 }
 
-.footer-text a:hover {
+.signin-text a:hover {
   text-decoration: underline;
 }
+
+/* ------------------- Animations ------------------- */
+
+/* Slide in left section */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Form slide up */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade-in for subtitle */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Typing effect for heading */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: #fff; }
+}
+
+/* Floating effect for SVG divider */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+

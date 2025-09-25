@@ -1,84 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shield - Sign Up</title>
-  <link rel="stylesheet" href="signup.css">
+  <meta charset="UTF-8" />
+  <title>Service Hub Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+   <script type="module" src="signup.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">🟦 Shield</div>
-    <nav>
-      
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-      <button class="login-btn">Log In</button>
-    </nav>
-  </header>
-
-  <!-- Signup Form -->
-  <main class="container">
-    <div class="form-card">
-      <h2>Create an Account</h2>
-      <p class="subtitle">Join our community of security professionals.</p>
-
-      <form>
-        <div class="row">
-          <div class="field">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" >
-          </div>
-          <div class="field">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" >
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com">
-        </div>
-
-        <div class="field">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+27 23 456 7890">
-        </div>
-
-        <div class="field">
-          <label for="password">Password</label>
-          <div class="password-field">
-            <input type="password" id="password" placeholder="Enter your password">
-            <span class="toggle">&#128065;</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="confirm">Confirm Password</label>
-          <div class="password-field">
-            <input type="password" id="confirm" placeholder="Confirm your password">
-            <span class="toggle">&#128065;</span>
-          </div>
-        </div>
-
-        <button type="submit" class="signup-btn">Sign Up</button>
-      </form>
-
-      <p class="footer-text">
-        Already have an account? <a href="#">Log In</a>
-      </p>
+  <div class="container">
+    <div class="left">
+      <h1>Join Us Today!</h1>
+      <p>Create an account to get started with Security Hub</p>
     </div>
-  </main>
 
-  <script>
-    // Toggle password visibility
-    document.querySelectorAll('.password-field .toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const input = toggle.previousElementSibling;
-        input.type = input.type === 'password' ? 'text' : 'password';
-      });
-    });
-  </script>
+    <div class="curve">
+      <!-- Wavy "S" SVG shape divider -->
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 0 0 C 25 50, 75 50, 100 100 L 100 0 Z" fill="#f4f4f4" />
+      </svg>
+    </div>
+
+    <div class="right">
+      <div class="form-box">
+        <h2>Create Your Account</h2>
+
+
+         <form>
+        <label for="email"> Email</label>
+        <input type="email" id="email" placeholder=" Enter Email" required />
+
+       <label for="password"> Password</label>
+       <input type="password" id="password" placeholder="Enter Password" required />
+
+       <label for="username">Username</label>
+       <input type="text" id="username" placeholder="Enter your username" required />
+
+       <label for="phone">Phone Number</label>
+       <input type="tel" id="phone" placeholder="Enter your phone number" required />
+
+  <button type="submit" id="submit">Sign Up</button>
+           </form>
+
+        <p class="signin-text">
+          Already have an account? <a href="index.html">Sign in</a>
+
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
 </body>
 </html>

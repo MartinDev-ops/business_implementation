@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="" alt="Profile Picture" id="userImage">
+      <h3 id="userName">User Name</h3>
+      <p id="userRole">Role</p>
+    </div>
+    <nav class="menu">
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Bookings</a>
+      <a href="#">Browse Guards</a>
+      <a href="#">Messages</a>
+      <a href="#">Profile</a>
+    </nav>
+    <button class="logout">Logout</button>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <main class="dashboard">
+    <h1>Dashboard</h1>
+
+    <!-- Upcoming Booking -->
+    <section class="upcoming">
+      <h2>Upcoming Booking</h2>
+      <div class="booking-card empty" id="upcomingBooking">
+        <p>No upcoming bookings yet.</p>
+      </div>
+    </section>
+
+    <!-- Booking History -->
+    <section class="history">
+      <h2>Booking History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="historyTable">
+          <tr>
+            <td colspan="4" style="text-align:center; color:#9ca3af;">
+              No bookings yet.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions">
+      <h2>Quick Actions</h2>
+      <div class="action-buttons">
+        <button class="btn">Browse Guards</button>
+        <button class="btn secondary">Manage Profile</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
