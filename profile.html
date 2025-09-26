@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="profile.css">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Intro Panel -->
+    <div class="left">
+      <h1>Your Profile</h1>
+      <p>Manage your personal details and keep your account up-to-date.</p>
+    </div>
+
+    <!-- Curve Divider -->
+    <div class="curve">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 0 0 C 25 50, 75 50, 100 100 L 100 0 Z" fill="#f4f4f4" />
+      </svg>
+    </div>
+
+    <!-- Right Profile Panel -->
+    <div class="right">
+      <div class="form-box profile-box">
+
+        <!-- Home Icon -->
+        <div class="home-icon">
+          <a href="dashboard.html" title="Go to Dashboard">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="profile-pic">
+          <img id="userImage" src="default-avatar.png" alt="Profile Picture">
+          <label for="imageUpload" class="camera-icon">
+            <i class="fa-solid fa-camera"></i>
+          </label>
+          <input type="file" id="imageUpload" accept="image/*" capture="user" hidden>
+        </div>
+
+        <!-- Username -->
+        <div class="field">
+          <label for="username">Username</label>
+          <div class="input-edit">
+            <input type="text" id="username" disabled>
+            <button class="edit-btn" data-field="username"><i class="fa-solid fa-pen"></i></button>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="field">
+          <label for="phone">Phone</label>
+          <div class="input-edit">
+            <input type="tel" id="phone" disabled>
+            <button class="edit-btn" data-field="phone"><i class="fa-solid fa-pen"></i></button>
+          </div>
+        </div>
+
+        <!-- Email (not editable) -->
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" disabled>
+        </div>
+
+        <!-- Save Changes -->
+        <button id="saveChanges">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="profile.js" defer></script>
+</body>
+</html>

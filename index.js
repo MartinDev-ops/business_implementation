@@ -2,7 +2,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SUPABASE_URL = "https://icvfdwkiilnwjsrzxvos.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljdmZkd2tpaWxud2pzcnp4dm9zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4MjE2MzUsImV4cCI6MjA3NDM5NzYzNX0.4bzKeLxudbRkKQp0rESQNkJzXuevaV4LP_KQOQBieik"; // safer to store in .env later
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljdmZkd2tpaWxud2pzcnp4dm9zIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODgyMTYzNSwiZXhwIjoyMDc0Mzk3NjM1fQ.EPeh9im3gt8zX0azAVU1Cu6IzVhFSFlNVNof4hbQC1U"; // safer to store in .env later
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // If login successful
-      alert("✅ Login successful! Redirecting...");
+      alert("✅ Login successful!...");
       window.location.href = "dashboard.html";
     } catch (err) {
       alert("❌ Unexpected error: " + err.message);

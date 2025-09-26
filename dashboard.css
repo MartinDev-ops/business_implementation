@@ -1,168 +1,167 @@
-/* Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Layout */
 body {
   display: flex;
-  background-color: #111827;
-  color: #f9fafb;
   min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #111827; /* dark text */
 }
 
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #1f2937;
-  padding: 20px;
+  background-color: #1f2937; /* dark gray-blue */
+  color: #f4f4f4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 2rem 1rem;
 }
 
-.profile {
+.sidebar .profile {
   text-align: center;
+  margin-bottom: 2rem;
 }
-.profile img {
-  width: 70px;
-  height: 70px;
+
+.sidebar .profile img {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: #374151;
-  margin-bottom: 10px;
-}
-
-.profile h3 {
-  font-size: 16px;
-  margin-bottom: 3px;
-}
-.profile p {
-  font-size: 13px;
-  color: #9ca3af;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-}
-.menu a {
-  padding: 12px 15px;
-  color: #d1d5db;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-bottom: 5px;
-}
-.menu a.active,
-.menu a:hover {
-  background-color: #2563eb;
-  color: #fff;
-}
-
-.logout {
-  background: none;
-  border: none;
-  color: #f87171;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: left;
-  padding: 10px 0;
-}
-
-/* Dashboard Content */
-.dashboard {
-  flex: 1;
-  padding: 30px;
-}
-
-.dashboard h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Upcoming Booking */
-.upcoming .booking-card {
-  display: flex;
-  background: #1f2937;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.booking-image {
-  width: 40%;
-  background: #374151;
-}
-.booking-image img {
-  width: 100%;
-  height: 100%;
+  margin-bottom: 0.5rem;
   object-fit: cover;
 }
 
-.booking-details {
-  padding: 20px;
-  flex: 1;
-}
-.booking-details h3 {
-  margin: 10px 0;
-}
-.btn {
-  background: #2563eb;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.btn:hover {
-  background: #1d4ed8;
-}
-.btn.secondary {
-  background: #374151;
-}
-.btn.secondary:hover {
-  background: #4b5563;
+.sidebar .profile h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
-/* Booking History */
-.history table {
+.sidebar .profile p {
+  font-size: 0.9rem;
+  color: #9ca3af; /* muted text */
+}
+
+.sidebar .menu a {
+  display: block;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  color: #f4f4f4;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar .menu a.active,
+.sidebar .menu a:hover {
+  background-color: #374151; /* slightly lighter */
+}
+
+.sidebar .logout {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ef4444; /* red */
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar .logout:hover {
+  background-color: #dc2626;
+}
+
+/* Main Dashboard */
+.dashboard {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.dashboard h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2.5rem;
+}
+
+section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* Upcoming Booking Card */
+.booking-card {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.booking-card.empty p {
+  color: #9ca3af;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Table */
+table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.history th,
-.history td {
-  padding: 12px 15px;
+
+thead {
+  background-color: #1f2937;
+  color: #f4f4f4;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
   text-align: left;
 }
-.history th {
-  background: #111827;
-  color: #9ca3af;
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
 }
-.history tr:nth-child(even) {
-  background: #1f2937;
-}
-.status {
-  color: #10b981;
-  font-weight: bold;
+
+tbody tr td {
+  color: #111827;
 }
 
 /* Quick Actions */
 .actions .action-buttons {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
 }
-/* Extra style for empty states */
-.booking-card.empty {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #1f2937;
-  border-radius: 10px;
-  padding: 30px;
-  color: #9ca3af;
-  font-style: italic;
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #3b82f6; /* blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn.secondary {
+  background-color: #9ca3af; /* gray */
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
