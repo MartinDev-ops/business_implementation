@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Security Guards</title>
+    <link rel="stylesheet" href="browse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="home-icon">
+          <a href="dashboard.html" title="Go to Dashboard">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </div>
+
+  
+    <div class="container">
+        <header>
+            <h1>Browse Security Guards</h1>
+            <p class="subtitle">Find the perfect security professional for your event. Filter by expertise, location, and more.</p>
+        </header>
+
+        <div class="search-sort-container">
+            <div class="search-box">
+                <input type="text" placeholder="Search by name, location, or skills">
+                <button>Search</button>
+            </div>
+            
+            <div class="sort-container">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="recommended">Recommended</option>
+                    <option value="name">Name</option>
+                    <option value="experience">Experience</option>
+                    <option value="location">Location</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="guards-container" id="guardsContainer">
+            <!-- Guard cards will be inserted here dynamically via JS -->
+        </div>
+    </div>
+
+    <script type="module" src="browse.js"></script>
+</body>
+</html>

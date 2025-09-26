@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Booking</title>
+  <link rel="stylesheet" href="confirm.css">
+
+</head>
+<body>
+
+  <h1>Confirm Your Booking</h1>
+  <p>Here’s the security guard you selected:</p>
+
+  <!-- Container for the selected guard card -->
+  <div id="selectedGuard"></div>
+
+  <!-- Booking form -->
+  <form id="bookingForm">
+    <div>
+      <label for="bookingLocation">Event Location *</label>
+      <input type="text" id="bookingLocation" required placeholder="Enter the event location">
+    </div>
+
+    <div>
+      <label for="bookingDate">Booking Date & Time *</label>
+      <input type="datetime-local" id="bookingDate" required>
+    </div>
+
+    <div>
+      <label for="hours">Number of Hours *</label>
+      <input type="number" id="hours" required min="1" placeholder="Enter hours">
+    </div>
+
+    <div>
+      <label>Total Cost:</label>
+      <p id="totalAmount">R0</p>
+    </div>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+
+  <script type="module" src="confirm.js"></script>
+</body>
+</html>

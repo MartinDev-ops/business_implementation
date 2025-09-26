@@ -3,7 +3,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 // Supabase credentials
 const SUPABASE_URL = "https://icvfdwkiilnwjsrzxvos.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljdmZkd2tpaWxud2pzcnp4dm9zIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODgyMTYzNSwiZXhwIjoyMDc0Mzk3NjM1fQ.EPeh9im3gt8zX0azAVU1Cu6IzVhFSFlNVNof4hbQC1U";
- // replace with your key
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // DOM elements
@@ -16,7 +16,8 @@ const userImage = document.getElementById('userImage');
 const editButtons = document.querySelectorAll('.edit-btn');
 
 let currentUser = null;
-let selectedImageFile = null; // Temporarily store image before saving
+let selectedImageFile = null;
+let currentProfilePicturePath = null;
 
 // 1️⃣ Check logged-in user
 async function checkUser() {
@@ -35,7 +36,7 @@ async function checkUser() {
 
 checkUser();
 
-// 2️⃣ Load user details from table
+// 2️⃣ Load user details
 async function loadUserData() {
   const { data, error } = await supabase
     .from('users')
@@ -52,7 +53,14 @@ async function loadUserData() {
   phoneInput.value = data.phone || '';
   emailInput.value = data.email || '';
 
-  if (data.profile_picture) userImage.src = data.profile_picture;
+  if (data.profile_picture) {
+    userImage.src = data.profile_picture;
+    const url = new URL(data.profile_picture);
+    currentProfilePicturePath = decodeURIComponent(url.pathname.replace('/storage/v1/object/public/profile-pictures/', ''));
+  } else {
+    userImage.src = 'default-avatar.png';
+    currentProfilePicturePath = null;
+  }
 }
 
 // 3️⃣ Enable editing fields
@@ -66,28 +74,54 @@ editButtons.forEach(btn => {
   });
 });
 
-// 4️⃣ Handle image selection
+// 4️⃣ Handle image selection with validation
 imageInput.addEventListener('change', (event) => {
   const file = event.target.files[0];
   if (!file) return;
-  selectedImageFile = file;
 
-  // Preview locally
+  if (!file.type.startsWith('image/')) {
+    alert("Only image files are allowed!");
+    imageInput.value = '';
+    selectedImageFile = null;
+    return;
+  }
+
+  selectedImageFile = file;
+  saveBtn.style.display = 'block';
+
   const reader = new FileReader();
   reader.onload = e => userImage.src = e.target.result;
   reader.readAsDataURL(file);
 });
 
-// 5️⃣ Save changes (username, phone, and profile picture)
+// 5️⃣ Save changes
 saveBtn.addEventListener('click', async () => {
   saveBtn.disabled = true;
-
   let profilePictureUrl = null;
 
-  // 5a. Upload image if a new one was selected
+   // ✅ South African phone number validation
+  const phoneValue = phoneInput.value.trim();
+  const phoneRegex = /^0[6781]\d{8}$/;
+  if (!phoneRegex.test(phoneValue)) {
+    alert("Enter a valid South African phone number ");
+    saveBtn.disabled = false;
+    return;
+  }
+
+  // Delete old profile picture if exists
+  if (selectedImageFile && currentProfilePicturePath) {
+    const { error: deleteError } = await supabase
+      .storage
+      .from('profile-pictures')
+      .remove([currentProfilePicturePath]);
+
+    if (deleteError) console.warn("Failed to delete old profile picture:", deleteError);
+  }
+
+  // Upload new profile picture
   if (selectedImageFile) {
     const fileExt = selectedImageFile.name.split('.').pop();
-    const fileName = `${currentUser.email}.${fileExt}`;
+    const fileName = `${currentUser.id}.${fileExt}`;
     const filePath = fileName;
 
     const { error: uploadError } = await supabase
@@ -102,19 +136,20 @@ saveBtn.addEventListener('click', async () => {
       return;
     }
 
-    // Get public URL
     const { data: urlData } = supabase
       .storage
       .from('profile-pictures')
       .getPublicUrl(filePath);
 
-    profilePictureUrl = urlData.publicUrl;
+    profilePictureUrl = `${urlData.publicUrl}?t=${new Date().getTime()}`; // cache-busting
+    currentProfilePicturePath = filePath;
+    userImage.src = profilePictureUrl;
   }
 
-  // 5b. Update the user record
+  // Update users table
   const updates = {
     username: usernameInput.value,
-    phone: phoneInput.value
+    phone: phoneInput.value,
   };
   if (profilePictureUrl) updates.profile_picture = profilePictureUrl;
 
@@ -130,7 +165,7 @@ saveBtn.addEventListener('click', async () => {
     usernameInput.disabled = true;
     phoneInput.disabled = true;
     saveBtn.style.display = 'none';
-    selectedImageFile = null; // reset
+    selectedImageFile = null;
     alert('Profile updated successfully!');
   }
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Security Guard - Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Add New Security Guard</h1>
+            <p class="subtitle">Enter the details of the security guard to add them to the browsing page</p>
+        </header>
+
+        <div class="admin-form-container">
+            <form class="guard-form" id="guardForm">
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <label for="guardName">Full Name *</label>
+                        <input type="text" id="guardName" name="guardName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guardAge">Age *</label>
+                            <input type="number" id="guardAge" name="guardAge" min="18" max="65" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guardWeight">Weight (lbs) *</label>
+                            <input type="number" id="guardWeight" name="guardWeight" min="100" max="300" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="guardExperience">Years of Experience *</label>
+                        <input type="number" id="guardExperience" name="guardExperience" min="0" max="50" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Professional Details</h2>
+                    <div class="form-group">
+                        <label for="guardRole">Security Role *</label>
+                        <select id="guardRole" name="guardRole" required>
+                            <option value="">Select a role</option>
+                            <option value="Private Security">Private Security</option>
+                            <option value="Onsite Security">Onsite Security</option>
+                            <option value="Event Security">Event Security</option>
+                            <option value="Online Security">Online Security</option>
+                            <option value="Corporate Security">Corporate Security</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guardLocation">Location *</label>
+                        <input type="text" id="guardLocation" name="guardLocation" placeholder="City, State" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guardSkills">Special Skills</label>
+                        <textarea id="guardSkills" name="guardSkills" placeholder="List any special skills or certifications"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Guard Photo</h2>
+                    <div class="photo-upload">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📷</div>
+                            <p>Click to upload guard's photo</p>
+                            <input type="file" id="guardPhoto" name="guardPhoto" accept="image/*" required>
+                        </div>
+                        <div class="photo-preview" id="photoPreview"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="cancel-btn">Clear Form</button>
+                    <button type="submit" class="submit-btn">Add Security Guard</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

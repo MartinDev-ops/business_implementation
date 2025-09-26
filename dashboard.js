@@ -8,7 +8,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Sidebar elements
 const userNameEl = document.getElementById('userName');
-const userEmailEl = document.getElementById('userEmail'); // optional if you want to display email
+const userImageEl = document.getElementById('userImage'); // Profile picture <img>
 const logoutBtn = document.querySelector('.logout');
 
 async function loadDashboard() {
@@ -30,10 +30,10 @@ async function loadDashboard() {
 
   console.log("Logged-in user:", user);
 
-  // Fetch user details from 'users' table (only email, username, phone)
+  // Fetch user details from 'users' table (email, username, profile_picture)
   const { data, error } = await supabase
     .from('users')
-    .select('email, username, phone')
+    .select('email, username, profile_picture')
     .eq('email', user.email)
     .single();
 
@@ -46,7 +46,11 @@ async function loadDashboard() {
 
   // Populate sidebar dynamically
   userNameEl.textContent = data.username || 'No Name';
-  if (userEmailEl) userEmailEl.textContent = data.email || '';
+  if (data.profile_picture) {
+    userImageEl.src = data.profile_picture; // Set profile picture
+  } else {
+    userImageEl.src = 'default-avatar.png'; // fallback image
+  }
 }
 
 // Logout
