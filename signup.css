@@ -1,0 +1,191 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  height: 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Left Section */
+.left {
+  flex: 1;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: #fff;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.left h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite step-end alternate;
+}
+
+.left p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 2s ease 3s forwards;
+}
+
+/* Curve Divider */
+.curve {
+  width: 80px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.curve svg {
+  width: 100%;
+  height: 100%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Right Section */
+.right {
+  flex: 1.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  position: relative;
+}
+
+.form-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: slideUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+input:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 6px rgba(0, 112, 243, 0.3);
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  transform: translateY(-3px);
+}
+
+.signin-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signin-text a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.signin-text a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------- Animations ------------------- */
+
+/* Slide in left section */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Form slide up */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade-in for subtitle */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Typing effect for heading */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: #fff; }
+}
+
+/* Floating effect for SVG divider */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
