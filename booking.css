@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 
-/* Fixed Sidebar Navigation */
+
 .sidebar {
     width: 250px;
     background-color: #1f2937;
@@ -102,7 +102,7 @@ body {
     background-color: #dc2626;
 }
 
-/* Main Content */
+
 .main-content {
     flex: 1;
     padding: 2rem 3rem;
@@ -126,7 +126,7 @@ body {
     color: #6b7280;
 }
 
-/* Booking Section */
+
 .booking-section {
     background: white;
     padding: 2rem;
@@ -140,7 +140,7 @@ body {
     color: #111827;
 }
 
-/* Alerts */
+
 .alert {
     padding: 1rem;
     border-radius: 8px;
@@ -202,7 +202,7 @@ body {
     margin-bottom: 0.2rem;
 }
 
-/* Form Styles */
+
 .booking-form {
     display: flex;
     flex-direction: column;
@@ -249,7 +249,7 @@ body {
     min-height: 100px;
 }
 
-/* Buttons */
+
 .btn {
     padding: 1rem 2rem;
     border: none;
@@ -275,7 +275,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Bookings Section */
+
 .bookings-section {
     background: white;
     padding: 2rem;
@@ -288,7 +288,7 @@ body {
     color: #111827;
 }
 
-/* No Bookings */
+
 .no-bookings {
     text-align: center;
     padding: 3rem;
@@ -301,7 +301,7 @@ body {
     color: #d1d5db;
 }
 
-/* Bookings List */
+
 .bookings-list {
     display: flex;
     flex-direction: column;

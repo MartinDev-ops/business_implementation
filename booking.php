@@ -43,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = trim($_POST['location']);
     $special_requirements = trim($_POST['special_requirements']);
     
-    // Validate special requirements length
+   
     if (strlen($special_requirements) > 1000) {
         $error = "Special requirements must be less than 1000 characters.";
     } else {
-        // Additional security: sanitize inputs
+        
         $event_name = htmlspecialchars($event_name, ENT_QUOTES, 'UTF-8');
         $location = htmlspecialchars($location, ENT_QUOTES, 'UTF-8');
         $special_requirements = htmlspecialchars($special_requirements, ENT_QUOTES, 'UTF-8');
@@ -110,7 +110,7 @@ $bookings = $bookingsStmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
+        
         <aside class="sidebar">
             <div class="profile">
                 <img src="<?php echo $user['profile_picture'] ?: 'default-avatar.png'; ?>" alt="Profile Picture">
@@ -132,7 +132,7 @@ $bookings = $bookingsStmt->fetchAll(PDO::FETCH_ASSOC);
                 <p>Manage your security service bookings</p>
             </div>
 
-            <!-- Booking Form -->
+            
             <div class="booking-section">
                 <h2><?php echo $guard ? 'Book ' . htmlspecialchars($guard['full_name']) : 'New Booking'; ?></h2>
                 
@@ -329,7 +329,7 @@ $bookings = $bookingsStmt->fetchAll(PDO::FETCH_ASSOC);
             }
         });
 
-        // Input validation for other fields
+        
         document.getElementById('event_name').addEventListener('input', function(e) {
             const maxLength = 100;
             const currentLength = this.value.length;

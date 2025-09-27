@@ -10,13 +10,13 @@ body {
   display: flex;
   min-height: 100vh;
   background-color: #f4f4f4;
-  color: #111827; /* dark text */
+  color: #111827; 
 }
 
-/* Fixed Sidebar Navigation */
+
 .sidebar {
   width: 250px;
-  background-color: #1f2937; /* dark gray-blue */
+  background-color: #1f2937; 
   color: #f4f4f4;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ body {
 
 .sidebar .profile p {
   font-size: 0.9rem;
-  color: #9ca3af; /* muted text */
+  color: #9ca3af; 
   margin-bottom: 0;
 }
 
@@ -77,14 +77,14 @@ body {
 
 .sidebar .menu a.active,
 .sidebar .menu a:hover {
-  background-color: #374151; /* slightly lighter */
+  background-color: #374151; 
 }
 
 .sidebar .logout {
   padding: 0.7rem;
   border: none;
   border-radius: 8px;
-  background-color: #ef4444; /* red */
+  background-color: #ef4444; 
   color: white;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -99,7 +99,7 @@ body {
   background-color: #dc2626;
 }
 
-/* Main Dashboard */
+
 .dashboard {
   flex: 1;
   padding: 2rem 3rem;
@@ -115,7 +115,7 @@ body {
   color: #111827;
 }
 
-/* Sections */
+
 section {
   margin-bottom: 2.5rem;
 }
@@ -126,7 +126,7 @@ section h2 {
   color: #111827;
 }
 
-/* Upcoming Booking Card */
+
 .booking-card {
   background-color: white;
   padding: 1rem 1.5rem;
@@ -140,7 +140,7 @@ section h2 {
   font-style: italic;
 }
 
-/* Table */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -168,7 +168,7 @@ tbody tr td {
   color: #111827;
 }
 
-/* Quick Actions */
+
 .actions .action-buttons {
   display: flex;
   gap: 1rem;
@@ -176,7 +176,7 @@ tbody tr td {
 
 .btn {
   padding: 0.7rem 1.5rem;
-  background-color: #3b82f6; /* blue */
+  background-color: #3b82f6; 
   color: white;
   border: none;
   border-radius: 8px;
@@ -187,7 +187,7 @@ tbody tr td {
 }
 
 .btn.secondary {
-  background-color: #9ca3af; /* gray */
+  background-color: #9ca3af; 
 }
 
 .btn:hover {

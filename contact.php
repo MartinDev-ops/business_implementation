@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST['message']);
     $category = $_POST['category'];
     
-    // Validate message length
+    
     if (strlen($message) < 50) {
         $error = "Message must be at least 50 characters long to provide sufficient details.";
     } else {
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <div class="container">
-    <!-- Left Intro Panel -->
+    
     <div class="left">
       <h1>Get In Touch</h1>
       <p>Have questions or need assistance? Our support team is here to help you with any inquiries about our security services.</p>
@@ -69,17 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <!-- Curve Divider -->
+    
     <div class="curve">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none">
         <path d="M 0 0 C 25 50, 75 50, 100 100 L 100 0 Z" fill="#f4f4f4" />
       </svg>
     </div>
 
-    <!-- Right Contact Panel -->
+    
     <div class="right">
       <div class="form-box contact-box">
-        <!-- Home Icon -->
+       
         <div class="home-icon">
           <a href="dashboard.php" title="Go to Dashboard">
             <i class="fa-solid fa-house"></i>
@@ -100,12 +100,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <h2>Contact Us</h2>
         <form method="POST" action="contact.php">
-          <!-- Prefilled User Info -->
+          
           <div class="user-info">
             <p><strong>From:</strong> <?php echo htmlspecialchars($user['username']); ?> (<?php echo htmlspecialchars($user['email']); ?>)</p>
           </div>
 
-          <!-- Category -->
+          
           <div class="field">
             <label for="category">Category</label>
             <select id="category" name="category" required>
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
 
-          <!-- Subject -->
+         
           <div class="field">
             <label for="subject">Subject</label>
             <input type="text" id="subject" name="subject" placeholder="Enter subject" 
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    title="Subject must be between 5 and 100 characters" required>
           </div>
 
-          <!-- Message -->
+          
           <div class="field">
             <label for="message">Message <small>(Minimum 50 characters required)</small></label>
             <textarea id="message" name="message" rows="5" placeholder="Please provide detailed information about your inquiry (minimum 50 characters)" 
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       title="Message must be between 50 and 1000 characters" required></textarea>
           </div>
 
-          <!-- Submit Button -->
+          
           <button type="submit" id="sendMessage">Send Message</button>
         </form>
       </div>
@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 
   <script>
-    // Character counter for message with minimum requirement
+    
     document.getElementById('message').addEventListener('input', function(e) {
       const minLength = 50;
       const maxLength = 1000;
@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         counter.style.color = '#27ae60';
       }
       
-      // Enable/disable submit button based on length
+      
       const submitButton = document.getElementById('sendMessage');
       if (currentLength < minLength) {
         submitButton.disabled = true;
@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       return counter;
     }
 
-    // Initialize counter on page load
+    
     document.addEventListener('DOMContentLoaded', function() {
       const messageField = document.getElementById('message');
       if (messageField) {
@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     });
 
-    // Subject length validation
+    
     document.getElementById('subject').addEventListener('input', function(e) {
       const minLength = 5;
       const maxLength = 100;

@@ -66,19 +66,19 @@ body {
   color: #333;
 }
 
-/* Profile Picture - Full Circle */
+
 .profile-pic {
   position: relative;
-  width: 200px;       /* bigger */
-  height: 200px;      /* equal width & height for perfect circle */
+  width: 200px;       
+  height: 200px;      
   margin: 0 auto 30px auto;
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;   /* perfect circle */
-  object-fit: cover;    /* crop image to fit circle */
+  border-radius: 50%;
+  object-fit: cover;
   border: 5px solid #6e8efb;
 }
 
@@ -88,7 +88,7 @@ body {
   right: 10px;
   background: linear-gradient(90deg, #6e8efb, #a777e3);
   border-radius: 50%;
-  padding: 12px;        /* slightly bigger for balance */
+  padding: 12px;
   color: white;
   cursor: pointer;
   font-size: 18px;
@@ -102,7 +102,7 @@ body {
 }
 
 
-/* Input fields */
+
 .field {
   margin-bottom: 15px;
 }
@@ -132,7 +132,7 @@ body {
   color: #666;
 }
 
-/* Edit buttons */
+
 .edit-btn {
   background: linear-gradient(90deg, #6e8efb, #a777e3);
   border: none;
@@ -144,7 +144,7 @@ body {
 }
 .edit-btn:hover { opacity: 0.9; }
 
-/* Save Changes button */
+
 #saveChanges {
   width: 100%;
   padding: 12px;
@@ -179,7 +179,7 @@ body {
   .curve { display: none; }
 }
 
-/* Home icon */
+
 .home-icon {
   position: absolute;
   top: 15px;

@@ -1,5 +1,5 @@
 
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   overflow: hidden;
 }
 
-/* Container */
+
 .container {
   display: flex;
   width: 90%;
@@ -28,7 +28,7 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
-/* Left Section */
+
 .left {
   flex: 1;
   background: linear-gradient(135deg, #6e8efb, #a777e3);
@@ -58,7 +58,7 @@ body {
   animation: fadeIn 2s ease 3s forwards;
 }
 
-/* Curve Divider */
+
 .curve {
   width: 80px;
   background: white;
@@ -72,7 +72,7 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Right Section */
+
 .right {
   flex: 1.3;
   display: flex;
@@ -152,27 +152,27 @@ button:hover {
   text-decoration: underline;
 }
 
-/* ------------------- Animations ------------------- */
 
-/* Slide in left section */
+
+
 @keyframes slideInLeft {
   from { transform: translateX(-100%); }
   to { transform: translateX(0); }
 }
 
-/* Form slide up */
+
 @keyframes slideUp {
   from { transform: translateY(40px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Fade-in for subtitle */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Typing effect for heading */
+
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -183,7 +183,7 @@ button:hover {
   to { border-color: #fff; }
 }
 
-/* Floating effect for SVG divider */
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }

@@ -31,7 +31,7 @@ $upcomingStmt->bindParam(":user_id", $_SESSION['user_id']);
 $upcomingStmt->execute();
 $upcomingBooking = $upcomingStmt->fetch(PDO::FETCH_ASSOC);
 
-// Get available guards instead of services (since security_services table doesn't exist)
+
 $guardsQuery = "SELECT g.*, GROUP_CONCAT(gs.name) as specialties 
                 FROM guards g 
                 LEFT JOIN guard_specialty_map gsm ON g.id = gsm.guard_id 
@@ -51,7 +51,7 @@ $guards = $guardsStmt->fetchAll(PDO::FETCH_ASSOC);
   <title>User Dashboard - Security Services</title>
   <link rel="stylesheet" href="dashboard.css">
   <style>
-    /* Additional styles for guards section */
+   
     .guards-section {
       margin-bottom: 2.5rem;
     }
